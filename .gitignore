@@ -10,11 +10,6 @@ out/
 coverage/
 *.tsbuildinfo
 
-# Environment files
-.env
-.env.*
-!.env.example
-
 # Logs
 logs/
 *.log
