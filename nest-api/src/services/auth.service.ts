@@ -21,6 +21,7 @@ export class AuthService {
   ) {}
 
   async register(dto: RegisterDto): Promise<{ message: string }> {
+    this.jsonDbService.ensureJsonFile(this.jsonDbService.getUsersDir());
     const users = this.jsonDbService.readJson<User[]>(this.jsonDbService.getUsersDir());
     if (users.find((u) => u.username === dto.username)) {
       throw new ConflictException('이미 사용 중인 사용자명입니다');
@@ -34,6 +35,7 @@ export class AuthService {
     };
     users.push(user);
     this.jsonDbService.writeJson(this.jsonDbService.getUsersDir(), users);
+    this.jsonDbService.ensureJsonFile(this.jsonDbService.getUserIndexPath(user.id));
     return { message: 'registered' };
   }
 

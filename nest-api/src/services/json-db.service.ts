@@ -28,7 +28,16 @@ export class JsonDbService {
   }
 
   ensureDir(dirPath: string): void {
-    fs.mkdirSync(dirPath, { recursive: true });
+    if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+    }
+  }
+
+  ensureJsonFile(filePath: string, defaultValue: unknown = []): void {
+    this.ensureDir(path.dirname(filePath));
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, JSON.stringify(defaultValue, null, 2));
+    }
   }
 
   getUsersDir(): string {
