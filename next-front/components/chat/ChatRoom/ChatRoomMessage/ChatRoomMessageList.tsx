@@ -132,7 +132,6 @@ export default function ChatRoomMessageList({
             <div className="flex justify-end">
               <div className="bg-primary/70 text-primary-foreground rounded-2xl rounded-tr-sm px-4 py-2 max-w-[75%] break-words">
                 {previewMessage}
-                <span className="inline-block w-0.5 h-4 bg-primary-foreground/80 animate-pulse ml-1 align-middle" />
               </div>
             </div>
           </div>
