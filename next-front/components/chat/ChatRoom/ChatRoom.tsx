@@ -176,6 +176,8 @@ export default function ChatRoom({
       return;
     }
 
+    if (selectedConversationId === activeConversationIdRef.current) return;
+
     let ignore = false;
 
     async function loadConversation() {

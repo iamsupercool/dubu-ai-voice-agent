@@ -16,17 +16,16 @@
 ### Ollama 모델 준비
 
 현재 서버는 `nest-api/src/services/ai.service.ts`에서 `gemma3` 모델을 사용합니다.
-
-#### Window
+#### AI Model 설치  
+##### Window
 https://ollama.com/
 다운로드 설치
 
-#### Mac
+##### Mac
 ```bash
 brew install ollama
 ```
-
-#### AI Model 설치
+#### ollama 설정
 1. ollama 실행
 ```bash
 ollama serve
@@ -172,7 +171,7 @@ npm run dev:all
 
 ## 5. 추후 고려 사항
 
-- WebRTC와 STT, TTS 엔진을 사용해서 두부에서 사용하는 스펙에 맞춰 개발
+- WebSocket과 WebRTC 중 적절한 스펙이 무엇인지 고민할 것
 - JSON 파일 저장소를 적절한 Database 구조와 설계를 갖출 것
 - AI의 페르소나 강화 및 지식 추가
 - ChatGPT의 음성 대화 모드와 같이 toggle UI가 아닌 지속적인 음성 세션으로 대화하는 UX로 전환
