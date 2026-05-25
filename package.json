@@ -1,0 +1,18 @@
+{
+  "name": "dubu-voice",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd next-front && npm install && cd ../nest-api && npm install",
+    "dev:all": "concurrently \"npm run dev:next-front\" \"npm run dev:nest-api\"",
+    "dev:next-front": "cd next-front && npm run dev",
+    "dev:nest-api": "cd nest-api && npm run start:dev",
+    "lint:all": "npm run lint --prefix next-front && npm run lint --prefix nest-api",
+    "format:all": "npm run format --prefix next-front && npm run format --prefix nest-api",
+    "typecheck:all": "npm run typecheck --prefix next-front && npm run typecheck --prefix nest-api",
+    "start:ollama": "OLLAMA_NUM_PARALLEL=4 OLLAMA_MAX_LOADED_MODELS=2 OLLAMA_KEEP_ALIVE=30m ollama serve"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

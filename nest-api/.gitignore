@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# data 폴더는 추적하되 실제 데이터 파일만 제외
+data/conversations/**/*.json
+data/users.json
+!data/conversations/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Claude / local AI assistant files
+CLAUDE.md
+claude.md
+.claude/
+.claude.json
+.claude.local.json
